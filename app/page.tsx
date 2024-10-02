@@ -1,101 +1,254 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Navbar from './components/Navbar'
+import Link from 'next/link'
+import CategoryTabs from './components/CategoryTabs'
+import Footer from './components/Footer'
+import CarParts from '../public/img/car-spare-parts.png'
+import Flag from '../public/img/flag.jpg'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <Navbar />
+      <div className="grid grid-cols-2 xs:grid-cols-1 xxs:grid-cols-1  mb-10 bg-background py-10">
+        <div className="mx-auto">
+          <form className="bg-white border-2 border-heading shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="mb-4">
+              <label className="block  text-sm font-bold mb-2" htmlFor="make">
+                Make
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                id="make"
+                type="text"
+                placeholder="Choose your Make"
+              />
+            </div>
+            <div className="mb-6">
+              <label className="block  text-sm font-bold mb-2" htmlFor="model">
+                Model
+              </label>
+              <input
+                className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3  mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="text"
+                type="model"
+                placeholder="Choose your model"
+              />
+              <p className="text-red-500 text-xs italic">
+                Please choose a password.
+              </p>
+            </div>
+            <div className="mb-4">
+              <label className="block  text-sm font-bold mb-2" htmlFor="year">
+                Year
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
+                id="year"
+                type="text"
+                placeholder="Year"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <button
+                className="bg-heading hover:bg-red-700 text-white font-bold py-2 px-16 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+              >
+                Find My Part
+              </button>
+            </div>
+          </form>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div>
+          <Image src={CarParts} alt="car parts" width={600} height={600} />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 mb-10 xs:grid-cols-1 xxs:grid-cols-1 mx-auto">
+        <div className="mx-auto">
+          <h3 className="font-semibold text-3xl my-10">
+            Why{' '}
+            <span className="italic">
+              PARTS<span className="text-heading">Giver</span>
+            </span>{' '}
+            ?
+          </h3>
+          <ol className="text-sm">
+            <li>Lorem Ipsum</li>
+            <li>Lorem Ipsum lorem ipsum</li>
+            <li>Lorem Ipsum ipsum</li>
+            <li>Lorem Ipsum lorem</li>
+            <li>Lorem Ipsum</li>
+            <li>Lorem Ipsum</li>
+          </ol>
+        </div>
+        <div>
+          <h3 className="font-semibold text-3xl mt-10 text-center text-heading">
+            Areas we serve
+          </h3>
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={Flag}
+            alt="car parts"
+            width={300}
+            height={300}
+            className="mx-auto"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </div>
+
+      <CategoryTabs />
+      <div className="max-w-6xl mx-auto mb-10">
+        <div className="mb-5 flex justify-between font-semibold text-lg">
+          <div className="text-left text-xl">Shop By Make</div>
+          <div>
+            <Link href="/" className="underline text-base">
+              View All
+            </Link>
+          </div>
+        </div>
+        <div className="grid grid-cols-9 xs:grid-cols-2 xxs:grid-cols-3 md:grid-cols-5">
+          <div>
+            <Image
+              src="/img/car-logos/ford.webp"
+              width={40}
+              height={40}
+              alt="ford spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/dodge.webp"
+              width={40}
+              height={40}
+              alt="dodge spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/honda.webp"
+              width={40}
+              height={40}
+              alt="honda spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/toyota.webp"
+              width={40}
+              height={40}
+              alt="toyota spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/porsche.webp"
+              width={40}
+              height={40}
+              alt="porsche spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/fiat.webp"
+              width={40}
+              height={40}
+              alt="fiat spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/hyundai.webp"
+              width={40}
+              height={40}
+              alt="hyundai spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/kia.webp"
+              width={40}
+              height={40}
+              alt="kia spare parts"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/car-logos/jeep.webp"
+              width={40}
+              height={40}
+              alt="jeep spare parts"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto mb-10">
+        <div className="mb-5 flex justify-between font-semibold text-lg">
+          <div className="text-xl">Location</div>
+        </div>
+        <div className="grid grid-cols-5 mx-auto xs:grid-cols-2 xxs:grid-cols-3 md:grid-cols-5">
+          <div>
+            <Image
+              src="/img/location/abudhabi.jpg"
+              width={80}
+              height={80}
+              alt="spare parts in abu dhabi"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/location/ajman.jpg"
+              width={80}
+              height={80}
+              alt="spare parts in ajman"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/location/alain.jpg"
+              width={80}
+              height={80}
+              alt="spare parts in al ain"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/location/dubai.jpg"
+              width={80}
+              height={80}
+              alt="spare parts in dubai"
+            />
+          </div>
+          <div>
+            <Image
+              src="/img/location/sharjah.png"
+              width={80}
+              height={80}
+              alt="spare parts in sharjah"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          <h1 className="text-3xl text-teal-900 font-semibold xs:text-xl ">
+            PartsGiver - Features & Functionalities
+          </h1>
+          <ol className="list-inside list-decimal text-sm">
+            <li>Spare parts Ecommerce catalog</li>
+            <li>Hosted on AWS Lambda</li>
+            <li>Inquiry form</li>
+            <li>User search functionalities</li>
+            <li>Paypal Integration</li>
+            <li>Supplier Login</li>
+            <li>Supplier Bid page</li>
+            <li>Client create, add, edit, update spare parts details</li>
+            <li>Inquiry form</li>
+          </ol>
+        </main>
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
